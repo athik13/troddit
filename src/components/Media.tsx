@@ -1,25 +1,26 @@
-/* eslint-disable @next/next/no-img-element */
-import Image from "next/legacy/image";
-import Gallery from "./Gallery";
-import VideoHandler from "./media/video/VideoHandler";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useMainContext } from "../MainContext";
-import { TwitterTweetEmbed } from "react-twitter-embed";
-import { useTheme } from "next-themes";
-import { useWindowSize, useWindowWidth } from "@react-hook/window-size";
 import {
   checkImageInCache,
   findMediaInfo,
   findOptimalImageIndex,
 } from "../../lib/utils";
+import { useEffect, useMemo, useRef, useState } from "react";
+
 import { AiOutlineTwitter } from "react-icons/ai";
-import { ImEmbed } from "react-icons/im";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
 import { BiExpand } from "react-icons/bi";
+import { BsBoxArrowInUpRight } from "react-icons/bs";
 import ExternalLink from "./ui/ExternalLink";
+import Gallery from "./Gallery";
 import { GalleryInfo } from "../../types";
+import { ImEmbed } from "react-icons/im";
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/legacy/image";
 import LoaderPuff from "./ui/LoaderPuff";
+import { TwitterTweetEmbed } from "react-twitter-embed";
+import VideoHandler from "./media/video/VideoHandler";
 import { logApiRequest } from "../RedditAPI";
+import { useMainContext } from "../MainContext";
+import { useTheme } from "next-themes";
+import { useWindowWidth } from "@react-hook/window-size";
 const scrollStyle =
   " scrollbar-thin scrollbar-thumb-th-scrollbar scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-track-rounded-full ";
 
@@ -539,7 +540,7 @@ const Media = ({
                   }}
                   className={
                     (uniformMediaMode ? "hidden md:flex" : "flex") +
-                    " absolute items-center justify-center w-8 h-8 text-white bg-black rounded-md md:hidden md:group-hover:flex top-2 right-2 bg-opacity-20 hover:bg-opacity-40 "
+                    " absolute items-center justify-center w-8 h-8 text-white bg-black rounded-md md:hidden md:group-hover:flex top-2 left-2 bg-opacity-20 hover:bg-opacity-40 "
                   }
                 >
                   <BiExpand className="flex-none w-4 h-4" />
@@ -675,7 +676,7 @@ const Media = ({
                   }}
                   className={
                     (uniformMediaMode ? "hidden md:flex" : "flex") +
-                    " absolute items-center justify-center w-8 h-8 text-white bg-black rounded-md md:hidden md:group-hover:flex top-2 right-2 bg-opacity-20 hover:bg-opacity-40 "
+                    " absolute items-center justify-center w-8 h-8 text-white bg-black rounded-md md:hidden md:group-hover:flex top-2 left-2 bg-opacity-20 hover:bg-opacity-40 "
                   }
                 >
                   <BiExpand className="flex-none w-4 h-4" />
